@@ -158,7 +158,25 @@ window.onload = function () {
     item.addEventListener("click", function () {
       // slideTo를 이용하면 원하는 페이지로 보낼 수 있다.
       // slideTo(index, speed, runCallbacks)
-      swiper.slideToLoop(index,500, false);
+      swiper.slideToLoop(index, 500, false);
     });
+  });
+  // business slide
+  const swBusiness = new Swiper(".sw-business", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+  // business-modal 기능
+  const businessModal = document.querySelector(".business-modal");
+  businessModal.addEventListener("click", function () {
+    businessModal.style.display = "none";
   });
 };
